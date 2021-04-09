@@ -1,0 +1,57 @@
+.tabNavigatorContainer {
+    float: left; 
+    width: 300px;
+    height: 100vh;
+    background: var(--blue);
+    filter: drop-shadow(4px 0px 4px rgba(0, 0, 0, 0.25));
+}
+
+.tabNavigatorTopbar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--blue-gray);
+    height: 70px;
+}
+
+.tabNavigatorTitles {
+    color: var(--white);
+    display: flex;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    padding: 8px 16px;
+}
+
+.tabNavigatorPages {
+    margin-top: 30px;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.tabNavigatorPages a {
+    color: var(--white);
+    text-decoration: none;
+    padding-top: 7px;
+    padding-bottom: 7px;
+    display: flex;
+    align-items: center;
+}
+
+.tabNavigatorPages a img {
+    margin-right: 10px;
+    margin-left: 20px;
+}
+
+.tabNavigatorPages a:hover:not(.active) {
+    background-color: var(--blue-gray);
+}
+
+.tabNavigatorLink a{
+    background-color: aquamarine;
+    color: brown;
+}
+
+.active {
+    background-color: var(--blue-dark);
+}

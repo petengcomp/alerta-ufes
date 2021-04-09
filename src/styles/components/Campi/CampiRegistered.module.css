@@ -1,0 +1,177 @@
+.campiregisteredContainer {
+    margin: 0 auto;
+    width: calc(100vw - 300px);
+    min-width: 350px;
+    min-height: 500px;
+    height: calc(100vh - 250px);
+    background: var(--white);
+    box-shadow: 2px 2px 5px 2px rgba(0, 0, 0, 0.25);
+    border-radius: 19px;    
+    display: flex;
+    flex-direction: column;
+
+}
+
+.campiregisteredContainer h1{
+    font-family: 'Roboto', sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 28px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: var(--gray);
+    align-self: center;
+}
+
+.campiregisteredTop {
+    display: flex;
+    justify-content: space-between;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+    margin-top: 2rem;
+}
+
+.campiregisteredSearch {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    font-family: 'Roboto', sans-serif;
+    font-style: normal;
+    font-weight: 500;
+}
+
+.campiregisteredSearch label {
+    font-size: 12px;
+    line-height: 14px;
+    display: flex;
+    align-items: center;
+    color: var(--blue);
+}
+
+.campiregisteredSearch input {
+    color: var(--gray);
+    margin-bottom: 20px;
+    border: 0;
+    border-bottom: 0.5px solid var(--gray);
+    transform: rotate(-0.01deg);
+    height: 30px;
+}
+
+.campiregisteredSearch select {
+    color: var(--gray);
+    margin-bottom: 20px;
+    border: 0;
+    border-bottom: 0.5px solid var(--gray);
+    transform: rotate(-0.01deg);
+    height: 30px;
+}
+
+.campiregisteredTop button {
+    width: 164px;
+    height: 39px;
+    display: flex;
+    align-items: center;
+    background: var(--blue);
+    box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.15);
+    border-radius: 50px;
+    margin-left: 15px;
+    border: 0;
+    justify-content: center;
+    color: var(--white);
+    font-family: 'Roboto', sans-serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 21px;
+}
+
+.campiregisteredActionBox {
+    flex: 1;
+    padding-left: 25px;
+    padding-right: 25px;
+    font-family: 'Roboto', sans-serif;
+    font-style: normal;
+}
+
+.campiregisteredActionBoxTitle {
+    display: flex;
+    justify-content: space-between;
+    padding-left: 30px;
+    padding-right: 170px;
+    border-bottom: 1px solid rgba(211, 211, 211, 0.75);
+}
+
+.campiregisteredActionBoxTitle h3 {
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 23px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: var(--gray);
+}
+
+.campiregisteredActionArea {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 15px;
+    padding-right: 15px;
+    border-bottom: 1px solid rgba(211, 211, 211, 0.75);
+}
+
+.campiregisteredActionArea h4 {
+    font-family: 'Roboto', sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 21px;
+    color: var(--gray);
+}
+
+.campiregisteredActionAreaButtons {
+    align-items: center;
+}
+
+.campiregisteredButtonEdit {
+    width: 85.6px;
+    height: 25px;
+    border: 0;
+    background: var(--yellow);
+    box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.15);
+    border-radius: 10px;
+    font-weight: bold;
+    font-size: 12px;
+    line-height: 14px;
+    color: var(--white);
+}
+
+.campiregisteredButtonDelete {
+    width: 85.6px;
+    height: 25px;
+    border: 0;
+    background: var(--red);
+    box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.15);
+    border-radius: 10px;
+    font-weight: bold;
+    font-size: 12px;
+    line-height: 14px;
+    color: var(--white);
+    margin-left: 15px;
+}
+
+.campiregisteredButtonAttendant {
+    width: 100px;
+    height: 25px;
+    border: 0;
+    background: var(--blue);
+    box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.15);
+    border-radius: 10px;
+    font-weight: bold;
+    font-size: 12px;
+    line-height: 14px;
+    color: var(--white);
+    margin-left: 15px;
+}

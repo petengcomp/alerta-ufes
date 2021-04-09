@@ -1,0 +1,76 @@
+.container {
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    background-color: #E5E5E5;
+    
+}
+
+
+.loginBox {
+    display: flex;
+    flex-direction: column;
+    justify-content:space-evenly;
+    align-items: center;
+    background-image: url(../../../public/images/Rectangle\ 1.svg);
+    height: 550px;
+    width: 500px;
+    border-radius: 15px;
+    padding-left: 54px;
+    padding-right: 54px;
+    box-shadow: 2px 3px 6px rgba(0, 0, 0, 0.25);
+}
+
+.textBox {
+    display: flex;
+    flex-direction: column;
+}
+
+.greetings {
+    font-size: 30px;
+    font-family: var(Roboto);
+    font-weight: 500;
+    line-height: 30px;
+    color: var(--blue);
+}
+
+.logToContinue {
+    font-size: 12px;
+    font-family: var(Roboto);
+    line-height: 10px;
+    color: var(--blue);
+}
+
+.loginField {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    width: 400px;
+}
+
+.fieldText {
+    font-size: 12px;
+    color: var(--blue);
+    line-height: 14px;
+}
+
+
+.loginButton {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--blue-gray);
+    width: 240px;
+    height: 40px;
+    border-radius: 20px;
+}
+
+.loginTextButton {
+    font-family: var(Roboto);
+    color: var(--white);
+    font-weight: 500;
+    font-style: normal;
+    letter-spacing: 3px;
+    font-size: 18px;
+}

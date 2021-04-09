@@ -1,0 +1,41 @@
+.headerContainer {
+    margin: 0 auto;
+    
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    width: calc(100vw - 300px);
+    margin-top: 3rem;
+    padding-left: 3rem;
+    padding-right: 3rem;
+}
+
+.headerSubContainer {
+    border-bottom: 0.5px solid var(--gray);
+    transform: rotate(-0.01deg);
+}
+
+.headerTitle {
+    font-family: 'Roboto', sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 36px;
+    line-height: 42px;
+
+    color: var(--gray);
+    padding: 0;
+    margin: 0;
+}
+
+.headerDescription {
+    font-family: 'Roboto', sans-serif;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 21px;
+    padding: 0;
+    margin: 0;
+    margin-bottom: 10px;
+
+    color: var(--gray);
+}
