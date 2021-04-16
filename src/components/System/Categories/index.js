@@ -22,34 +22,37 @@ export function Categories(){
                     <h3>Nome</h3>
                     <h3>Ações</h3>
                 </div>
-                <div className={styles.categoriesActionArea}>
-                    <h4>Categoria 1</h4>
-                    <div className={styles.categoriesActionAreaButtons}>
-                        <button className={styles.categoriesButtonEdit}>EDITAR</button>
-                        <button className={styles.categoriesButtonDelete}>EXCLUIR</button>
+                <div className={styles.categoriesActionContainer}>
+                    <div className={styles.categoriesActionArea}>
+                        <h4>Categoria 1</h4>
+                        <div className={styles.categoriesActionAreaButtons}>
+                            <button className={styles.categoriesButtonEdit}>EDITAR</button>
+                            <button className={styles.categoriesButtonDelete}>EXCLUIR</button>
+                        </div>
                     </div>
-                </div>
-                <div className={styles.categoriesActionArea}>
-                    <h4>Categoria 2</h4>
-                    <div className={styles.categoriesActionAreaButtons}>
-                        <button className={styles.categoriesButtonEdit}>EDITAR</button>
-                        <button className={styles.categoriesButtonDelete}>EXCLUIR</button>
+                    <div className={styles.categoriesActionArea}>
+                        <h4>Categoria 2</h4>
+                        <div className={styles.categoriesActionAreaButtons}>
+                            <button className={styles.categoriesButtonEdit}>EDITAR</button>
+                            <button className={styles.categoriesButtonDelete}>EXCLUIR</button>
+                        </div>
                     </div>
-                </div>
-                <div className={styles.categoriesActionArea}>
-                    <h4>Categoria 3</h4>
-                    <div className={styles.categoriesActionAreaButtons}>
-                        <button className={styles.categoriesButtonEdit}>EDITAR</button>
-                        <button className={styles.categoriesButtonDelete}>EXCLUIR</button>
+                    <div className={styles.categoriesActionArea}>
+                        <h4>Categoria 3</h4>
+                        <div className={styles.categoriesActionAreaButtons}>
+                            <button className={styles.categoriesButtonEdit}>EDITAR</button>
+                            <button className={styles.categoriesButtonDelete}>EXCLUIR</button>
+                        </div>
                     </div>
+                    <div className={styles.categoriesActionArea}>
+                        <h4>Categoria 4</h4>
+                        <div className={styles.categoriesActionAreaButtons}>
+                            <button className={styles.categoriesButtonEdit}>EDITAR</button>
+                            <button className={styles.categoriesButtonDelete}>EXCLUIR</button>
+                        </div>
+                    </div>    
                 </div>
-                <div className={styles.categoriesActionArea}>
-                    <h4>Categoria 4</h4>
-                    <div className={styles.categoriesActionAreaButtons}>
-                        <button className={styles.categoriesButtonEdit}>EDITAR</button>
-                        <button className={styles.categoriesButtonDelete}>EXCLUIR</button>
-                    </div>
-                </div>
+                
             </div>
         </div>
     )

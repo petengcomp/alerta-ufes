@@ -22,32 +22,34 @@ export function QuickAnswers(){
                     <h3>Nome</h3>
                     <h3>Ações</h3>
                 </div>
-                <div className={styles.quickanswersActionArea}>
-                    <h4>Resposta rápida1</h4>
-                    <div className={styles.quickanswersActionAreaButtons}>
-                        <button className={styles.quickanswersButtonEdit}>EDITAR</button>
-                        <button className={styles.quickanswersButtonDelete}>EXCLUIR</button>
+                <div className={styles.quickanswersActionContainer}>
+                    <div className={styles.quickanswersActionArea}>
+                        <h4>Resposta rápida1</h4>
+                        <div className={styles.quickanswersActionAreaButtons}>
+                            <button className={styles.quickanswersButtonEdit}>EDITAR</button>
+                            <button className={styles.quickanswersButtonDelete}>EXCLUIR</button>
+                        </div>
                     </div>
-                </div>
-                <div className={styles.quickanswersActionArea}>
-                    <h4>Resposta rápida2</h4>
-                    <div className={styles.quickanswersActionAreaButtons}>
-                        <button className={styles.quickanswersButtonEdit}>EDITAR</button>
-                        <button className={styles.quickanswersButtonDelete}>EXCLUIR</button>
+                    <div className={styles.quickanswersActionArea}>
+                        <h4>Resposta rápida2</h4>
+                        <div className={styles.quickanswersActionAreaButtons}>
+                            <button className={styles.quickanswersButtonEdit}>EDITAR</button>
+                            <button className={styles.quickanswersButtonDelete}>EXCLUIR</button>
+                        </div>
                     </div>
-                </div>
-                <div className={styles.quickanswersActionArea}>
-                    <h4>Resposta rápida3</h4>
-                    <div className={styles.quickanswersActionAreaButtons}>
-                        <button className={styles.quickanswersButtonEdit}>EDITAR</button>
-                        <button className={styles.quickanswersButtonDelete}>EXCLUIR</button>
+                    <div className={styles.quickanswersActionArea}>
+                        <h4>Resposta rápida3</h4>
+                        <div className={styles.quickanswersActionAreaButtons}>
+                            <button className={styles.quickanswersButtonEdit}>EDITAR</button>
+                            <button className={styles.quickanswersButtonDelete}>EXCLUIR</button>
+                        </div>
                     </div>
-                </div>
-                <div className={styles.quickanswersActionArea}>
-                    <h4>Resposta rápida4</h4>
-                    <div className={styles.quickanswersActionAreaButtons}>
-                        <button className={styles.quickanswersButtonEdit}>EDITAR</button>
-                        <button className={styles.quickanswersButtonDelete}>EXCLUIR</button>
+                    <div className={styles.quickanswersActionArea}>
+                        <h4>Resposta rápida4</h4>
+                        <div className={styles.quickanswersActionAreaButtons}>
+                            <button className={styles.quickanswersButtonEdit}>EDITAR</button>
+                            <button className={styles.quickanswersButtonDelete}>EXCLUIR</button>
+                        </div>
                     </div>
                 </div>
             </div>
