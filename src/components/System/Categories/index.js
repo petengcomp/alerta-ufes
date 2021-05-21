@@ -5,9 +5,11 @@ import styles from '../../../styles/components/System/Categories.module.css';
 export function Categories(){
 
     const { 
+        categorias,
         showEditCategories,
         showDeleteCategories,
     } = useContext(SystemContext)
+
 
     return(
         <div className={styles.categoriesContainer}>
@@ -17,10 +19,9 @@ export function Categories(){
                     <label>Categoria</label>
                     <input defaultValue="PERSEGUIÇÃO"></input>
                     <select id="categorias" name="categorias">
-                        <option value="categoria 1">categoria 1</option>
-                        <option value="categoria 2">categoria 2</option>
-                        <option value="categoria 3">categoria 3</option>
-                        <option value="categoria 4">categoria 4</option>
+                        {(categorias).map((categoria, index) =>
+                            <option key={index} value={categoria.name}>{categoria.name}</option>
+                        )}
                     </select>
                 </div>
                 <button className={styles.categoriesButton}>Adicionar</button>
@@ -31,34 +32,16 @@ export function Categories(){
                     <h3>Ações</h3>
                 </div>
                 <div className={styles.categoriesActionContainer}>
-                    <div className={styles.categoriesActionArea}>
-                        <h4>Categoria 1</h4>
-                        <div className={styles.categoriesActionAreaButtons}>
-                            <button className={styles.categoriesButtonEdit} onClick={showEditCategories}>EDITAR</button>
-                            <button className={styles.categoriesButtonDelete} onClick={showDeleteCategories}>EXCLUIR</button>
-                        </div>
-                    </div>
-                    <div className={styles.categoriesActionArea}>
-                        <h4>Categoria 2</h4>
-                        <div className={styles.categoriesActionAreaButtons}>
-                            <button className={styles.categoriesButtonEdit} onClick={showEditCategories}>EDITAR</button>
-                            <button className={styles.categoriesButtonDelete} onClick={showDeleteCategories}>EXCLUIR</button>
-                        </div>
-                    </div>
-                    <div className={styles.categoriesActionArea}>
-                        <h4>Categoria 3</h4>
-                        <div className={styles.categoriesActionAreaButtons}>
-                            <button className={styles.categoriesButtonEdit} onClick={showEditCategories}>EDITAR</button>
-                            <button className={styles.categoriesButtonDelete} onClick={showDeleteCategories}>EXCLUIR</button>
-                        </div>
-                    </div>
-                    <div className={styles.categoriesActionArea}>
-                        <h4>Categoria 4</h4>
-                        <div className={styles.categoriesActionAreaButtons}>
-                            <button className={styles.categoriesButtonEdit} onClick={showEditCategories}>EDITAR</button>
-                            <button className={styles.categoriesButtonDelete} onClick={showDeleteCategories}>EXCLUIR</button>
-                        </div>
-                    </div>    
+                    {(categorias).map((categoria, index) =>
+                        <div className={styles.categoriesActionArea} key={index}>
+                            <h4>{categoria.name}</h4>
+                            <div className={styles.categoriesActionAreaButtons}>
+                                <button className={styles.categoriesButtonEdit} onClick={showEditCategories}>EDITAR</button>
+                                <button className={styles.categoriesButtonDelete} onClick={() => showDeleteCategories(index)}>EXCLUIR</button>
+                            </div>
+                        </div>  
+                    )}
+                    
                 </div>
                 
             </div>

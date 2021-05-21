@@ -4,6 +4,7 @@ import styles from '../../../styles/components/System/Delete.module.css';
 
 export function Delete(props){
     const { 
+        deleteCategory,
         showDeleteCategories,
         showDeleteAnswer
     } = useContext(SystemContext)
@@ -23,7 +24,7 @@ export function Delete(props){
                     <h3>CANCELAR</h3>
                 </button>
                 <button className={styles.deleteButtonSave} 
-                    onClick={props.type === "categoria" ? showDeleteCategories : showDeleteAnswer}>
+                    onClick={props.type === "categoria" ? deleteCategory : showDeleteAnswer}>
                     <h3>EXCLUIR</h3>
                 </button>
             </div>
