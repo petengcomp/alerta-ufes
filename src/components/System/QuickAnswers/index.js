@@ -1,6 +1,14 @@
+import { useContext } from 'react';
+import { SystemContext } from '../../../contexts/SystemContexts';
 import styles from '../../../styles/components/System/QuickAnswers.module.css';
 
 export function QuickAnswers(){
+
+    const { 
+        showEditAnswer,
+        showDeleteAnswer,
+    } = useContext(SystemContext)
+
     return(
         <div className={styles.quickanswersContainer}>
             <h1>Respostas Rápidas</h1>
@@ -26,29 +34,29 @@ export function QuickAnswers(){
                     <div className={styles.quickanswersActionArea}>
                         <h4>Resposta rápida1</h4>
                         <div className={styles.quickanswersActionAreaButtons}>
-                            <button className={styles.quickanswersButtonEdit}>EDITAR</button>
-                            <button className={styles.quickanswersButtonDelete}>EXCLUIR</button>
+                            <button className={styles.quickanswersButtonEdit} onClick={showEditAnswer}>EDITAR</button>
+                            <button className={styles.quickanswersButtonDelete} onClick={showDeleteAnswer}>EXCLUIR</button>
                         </div>
                     </div>
                     <div className={styles.quickanswersActionArea}>
                         <h4>Resposta rápida2</h4>
                         <div className={styles.quickanswersActionAreaButtons}>
-                            <button className={styles.quickanswersButtonEdit}>EDITAR</button>
-                            <button className={styles.quickanswersButtonDelete}>EXCLUIR</button>
+                            <button className={styles.quickanswersButtonEdit} onClick={showEditAnswer}>EDITAR</button>
+                            <button className={styles.quickanswersButtonDelete} onClick={showDeleteAnswer}>EXCLUIR</button>
                         </div>
                     </div>
                     <div className={styles.quickanswersActionArea}>
                         <h4>Resposta rápida3</h4>
                         <div className={styles.quickanswersActionAreaButtons}>
-                            <button className={styles.quickanswersButtonEdit}>EDITAR</button>
-                            <button className={styles.quickanswersButtonDelete}>EXCLUIR</button>
+                            <button className={styles.quickanswersButtonEdit} onClick={showEditAnswer}>EDITAR</button>
+                            <button className={styles.quickanswersButtonDelete} onClick={showDeleteAnswer}>EXCLUIR</button>
                         </div>
                     </div>
                     <div className={styles.quickanswersActionArea}>
                         <h4>Resposta rápida4</h4>
                         <div className={styles.quickanswersActionAreaButtons}>
-                            <button className={styles.quickanswersButtonEdit}>EDITAR</button>
-                            <button className={styles.quickanswersButtonDelete}>EXCLUIR</button>
+                            <button className={styles.quickanswersButtonEdit} onClick={showEditAnswer}>EDITAR</button>
+                            <button className={styles.quickanswersButtonDelete} onClick={showDeleteAnswer}>EXCLUIR</button>
                         </div>
                     </div>
                 </div>

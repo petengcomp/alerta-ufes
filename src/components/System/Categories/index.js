@@ -1,6 +1,14 @@
+import { useContext } from 'react';
+import { SystemContext } from '../../../contexts/SystemContexts';
 import styles from '../../../styles/components/System/Categories.module.css';
 
 export function Categories(){
+
+    const { 
+        showEditCategories,
+        showDeleteCategories,
+    } = useContext(SystemContext)
+
     return(
         <div className={styles.categoriesContainer}>
             <h1>Categorias</h1>
@@ -26,29 +34,29 @@ export function Categories(){
                     <div className={styles.categoriesActionArea}>
                         <h4>Categoria 1</h4>
                         <div className={styles.categoriesActionAreaButtons}>
-                            <button className={styles.categoriesButtonEdit}>EDITAR</button>
-                            <button className={styles.categoriesButtonDelete}>EXCLUIR</button>
+                            <button className={styles.categoriesButtonEdit} onClick={showEditCategories}>EDITAR</button>
+                            <button className={styles.categoriesButtonDelete} onClick={showDeleteCategories}>EXCLUIR</button>
                         </div>
                     </div>
                     <div className={styles.categoriesActionArea}>
                         <h4>Categoria 2</h4>
                         <div className={styles.categoriesActionAreaButtons}>
-                            <button className={styles.categoriesButtonEdit}>EDITAR</button>
-                            <button className={styles.categoriesButtonDelete}>EXCLUIR</button>
+                            <button className={styles.categoriesButtonEdit} onClick={showEditCategories}>EDITAR</button>
+                            <button className={styles.categoriesButtonDelete} onClick={showDeleteCategories}>EXCLUIR</button>
                         </div>
                     </div>
                     <div className={styles.categoriesActionArea}>
                         <h4>Categoria 3</h4>
                         <div className={styles.categoriesActionAreaButtons}>
-                            <button className={styles.categoriesButtonEdit}>EDITAR</button>
-                            <button className={styles.categoriesButtonDelete}>EXCLUIR</button>
+                            <button className={styles.categoriesButtonEdit} onClick={showEditCategories}>EDITAR</button>
+                            <button className={styles.categoriesButtonDelete} onClick={showDeleteCategories}>EXCLUIR</button>
                         </div>
                     </div>
                     <div className={styles.categoriesActionArea}>
                         <h4>Categoria 4</h4>
                         <div className={styles.categoriesActionAreaButtons}>
-                            <button className={styles.categoriesButtonEdit}>EDITAR</button>
-                            <button className={styles.categoriesButtonDelete}>EXCLUIR</button>
+                            <button className={styles.categoriesButtonEdit} onClick={showEditCategories}>EDITAR</button>
+                            <button className={styles.categoriesButtonDelete} onClick={showDeleteCategories}>EXCLUIR</button>
                         </div>
                     </div>    
                 </div>

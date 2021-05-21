@@ -1,6 +1,12 @@
+import { useContext } from 'react';
+import { CampiContext } from '../../../contexts/CampiContexts';
 import styles from '../../../styles/components/Campi/CampiRegistered.module.css';
 
 export function CampiRegistered(){
+    const { 
+        showDeleteCampus,
+    } = useContext(CampiContext)
+
     return(
         <div className={styles.campiregisteredContainer}>
             
@@ -20,7 +26,7 @@ export function CampiRegistered(){
                         <h4>5</h4>
                         <div className={styles.campiregisteredActionAreaButtons}>
                             <button className={styles.campiregisteredButtonEdit}>EDITAR</button>
-                            <button className={styles.campiregisteredButtonDelete}>EXCLUIR</button>
+                            <button className={styles.campiregisteredButtonDelete} onClick={showDeleteCampus}>EXCLUIR</button>
                             <button className={styles.campiregisteredButtonAttendant}>ATENDENTES</button>
                         </div>
                     </div>
@@ -29,7 +35,7 @@ export function CampiRegistered(){
                         <h4>12</h4>
                         <div className={styles.campiregisteredActionAreaButtons}>
                             <button className={styles.campiregisteredButtonEdit}>EDITAR</button>
-                            <button className={styles.campiregisteredButtonDelete}>EXCLUIR</button>
+                            <button className={styles.campiregisteredButtonDelete} onClick={showDeleteCampus}>EXCLUIR</button>
                             <button className={styles.campiregisteredButtonAttendant}>ATENDENTES</button>
                         </div>
                     </div>
@@ -38,7 +44,7 @@ export function CampiRegistered(){
                         <h4>22</h4>
                         <div className={styles.campiregisteredActionAreaButtons}>
                             <button className={styles.campiregisteredButtonEdit}>EDITAR</button>
-                            <button className={styles.campiregisteredButtonDelete}>EXCLUIR</button>
+                            <button className={styles.campiregisteredButtonDelete} onClick={showDeleteCampus}>EXCLUIR</button>
                             <button className={styles.campiregisteredButtonAttendant}>ATENDENTES</button>
                         </div>
                     </div>
@@ -47,7 +53,7 @@ export function CampiRegistered(){
                         <h4>4</h4>
                         <div className={styles.campiregisteredActionAreaButtons}>
                             <button className={styles.campiregisteredButtonEdit}>EDITAR</button>
-                            <button className={styles.campiregisteredButtonDelete}>EXCLUIR</button>
+                            <button className={styles.campiregisteredButtonDelete} onClick={showDeleteCampus}>EXCLUIR</button>
                             <button className={styles.campiregisteredButtonAttendant}>ATENDENTES</button>
                         </div>
                     </div>
@@ -57,7 +63,7 @@ export function CampiRegistered(){
                         <h4>0</h4>
                         <div className={styles.campiregisteredActionAreaButtons}>
                             <button className={styles.campiregisteredButtonEdit}>EDITAR</button>
-                            <button className={styles.campiregisteredButtonDelete}>EXCLUIR</button>
+                            <button className={styles.campiregisteredButtonDelete} onClick={showDeleteCampus}>EXCLUIR</button>
                             <button className={styles.campiregisteredButtonAttendant}>ATENDENTES</button>
                         </div>
                     </div>    

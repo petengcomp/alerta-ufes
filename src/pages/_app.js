@@ -1,5 +1,7 @@
 import Layout from '../components/Layout'
 import { AlertInfoProvider } from '../contexts/AlertInfoContexts'
+import { CampiProvider } from '../contexts/CampiContexts'
+import { SystemProvider } from '../contexts/SystemContexts'
 import '../styles/globals.css'
 
 function MyApp({ Component, pageProps, router }) {
@@ -10,7 +12,11 @@ function MyApp({ Component, pageProps, router }) {
   return (
     <Layout>
       <AlertInfoProvider>
-        <Component {...pageProps} />
+        <SystemProvider>
+          <CampiProvider>
+            <Component {...pageProps} />
+          </CampiProvider>  
+        </SystemProvider>
       </AlertInfoProvider>
     </Layout>
   )

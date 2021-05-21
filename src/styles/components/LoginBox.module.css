@@ -4,14 +4,12 @@
     justify-content: center;
     align-items: center;
     background-color: var(--background);
-    
 }
-
 
 .loginBox {
     display: flex;
     flex-direction: column;
-    justify-content:space-evenly;
+    justify-content: space-evenly;
     align-items: center;
     background-image: url(../../../public/images/Rectangle\ 1.svg);
     height: 550px;
@@ -25,24 +23,6 @@
 .textBox {
     display: flex;
     flex-direction: column;
-}
-
-.input{
-    border: none;
-    border-bottom: 1px solid var(--blue);
-}
-.input:focus {
-    box-shadow: 0 0 0 0;
-    border: 0 none;
-    border-bottom: 1px solid var(--blue);
-    outline: 0;
-}
-
-.forgotPass{
-    color: var(--blue);
-    display: flex;
-    align-self: flex-end;
-    margin-top: 10px;
 }
 
 .greetings {
@@ -78,6 +58,32 @@
     line-height: 14px;
 }
 
+.input {
+    border: none;
+    border-bottom: 1px solid var(--blue);
+    margin-top: 5px;
+    font-size: 12px;
+    padding: 0px 0px 1px 5px;
+    color: var(--grey);
+}
+
+.input:focus {
+    box-shadow: 0 0 0 0;
+    border: 0 none;
+    border-bottom: 1px solid var(--blue);
+    outline: 0;
+}
+
+.forgotPass {
+    color: var(--blue);
+    display: flex;
+    align-self: flex-end;
+    margin-top: 10px;
+}
+
+.forgotPass {
+    cursor: pointer;
+}
 
 .loginButton {
     display: flex;
@@ -87,6 +93,10 @@
     width: 240px;
     height: 40px;
     border-radius: 20px;
+}
+
+.loginButton:hover {
+    cursor: pointer;
 }
 
 .loginTextButton {

@@ -16,9 +16,11 @@ body {
   --text-highlight: #B3B9FF;
   --title: #2E384D;
   --red: #D9042B;
+  --red-dark: #a70523;
   --green: #4CD62B;
-  --blue: #1F4373;
   --yellow: #FFC700;
+  --yellow-dark: #e0b000;
+  --blue: #1F4373;
   --blue-dark: #183458;
   --blue-gray: #345580;
 }

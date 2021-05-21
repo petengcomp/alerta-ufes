@@ -1,0 +1,109 @@
+.card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 450px;
+    width: 40%;
+    box-shadow: 2px 3px 6px rgba(0, 0, 0, 0.25);
+    border-radius: 25px;
+    max-height: 450px;
+    margin-left: 10px;
+    justify-content: space-between;
+}
+
+.invisibleBox {
+    display: flex;
+    flex-direction: row;
+}
+
+.firstColumn{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 300px;
+}
+
+.secondColumn{
+    margin-top: 16px;
+    margin-bottom: 16px;
+    display: flex;
+    flex-direction: column;
+    margin-left: 20px;
+    justify-content: space-between;
+}
+
+.icon{
+    color: var(--blue);
+    margin-right: 10px;
+}
+
+.secondColumnText{
+    color: var(--blue);
+    font-size: 18px;
+    font-family: 'Roboto';
+    font-weight: 300;
+}
+
+.title {
+    color: #545454;
+    font-family: 'Roboto';
+    margin: 25px;
+    font-size: 24px;
+}
+
+.firstColumnText {
+    font-size: 10px;
+    color: var(--blue);
+    line-height: 14px;
+    letter-spacing: 1px;
+    font-weight: 600;
+}
+
+.firstColumnField{
+    border: none;
+    border-bottom: 1px solid var(--blue);
+    margin-bottom: 25px;
+    margin-top: 10px;
+}
+
+.firstColumnField:focus {
+    box-shadow: 0 0 0 0;
+    border: 0 none;
+    border-bottom: 1px solid var(--blue);
+    outline: 0;
+}
+
+.firstColumn select {
+    box-shadow: 0 0 0 0;
+    border: 0 none;
+    border-bottom: 1px solid var(--blue);
+    outline: 0;
+}
+
+.button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--blue-gray);
+    width: 164px;
+    height: 40px;
+    border-radius: 20px;
+    border: none;
+    outline: none;
+    box-shadow: none;
+    margin: 25px;
+}
+.button:focus{
+    outline: none;
+    box-shadow: none;
+}
+
+.buttonText {
+    font-family: var(Roboto);
+    color: var(--white);
+    font-weight: 500;
+    font-style: normal;
+    letter-spacing: 1px;
+    font-size: 18px;
+}

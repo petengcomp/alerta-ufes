@@ -52,7 +52,6 @@
     margin-bottom: 20px;
     border: 0;
     border-bottom: 0.5px solid var(--gray);
-    transform: rotate(-0.01deg);
     height: 30px;
 }
 
@@ -61,7 +60,6 @@
     margin-bottom: 20px;
     border: 0;
     border-bottom: 0.5px solid var(--gray);
-    transform: rotate(-0.01deg);
     height: 30px;
 }
 
@@ -82,6 +80,10 @@
     font-weight: bold;
     font-size: 18px;
     line-height: 21px;
+}
+
+.quickanswersTop button:hover{
+    cursor: pointer;
 }
 
 .quickanswersActionBox {
@@ -145,6 +147,10 @@
     color: var(--white);
 }
 
+.quickanswersButtonEdit:hover {
+    cursor: pointer;
+}
+
 .quickanswersButtonDelete {
     width: 85.6px;
     height: 25px;
@@ -157,6 +163,10 @@
     line-height: 14px;
     color: var(--white);
     margin-left: 15px;
+}
+
+.quickanswersButtonDelete:hover {
+    cursor: pointer;
 }
 
 .quickanswersActionContainer {

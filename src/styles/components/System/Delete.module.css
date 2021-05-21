@@ -1,0 +1,94 @@
+.deleteContainer {
+    width: 500px;
+    height: 290px;
+    background: var(--background-components);
+    box-shadow: 2px 2px 5px 2px rgba(0, 0, 0, 0.25);
+    border-radius: 19px;    
+    position: absolute;
+    left: 50%;
+    top: 50%; 
+    transform: translateX(-50%) translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+.deleteContainer h1 {
+    font-family: 'Roboto', sans-serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 30px;
+    line-height: 35px;
+    text-align: center;
+    color: var(--blue);
+    align-self: center;
+}
+
+.deleteContainer h3 {
+    font-family: 'Roboto', sans-serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 20px;
+    line-height: 23px;
+    color: var(--blue);
+}
+
+.deleteContainer h4 {
+    font-family: 'Roboto', sans-serif;
+    font-style: normal;
+    font-weight: 200;
+    font-size: 20px;
+    line-height: 23px;
+    color: var(--blue);
+}
+
+.deleteButtons {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    align-self: flex-end;
+}
+
+.deleteButtonCancel {
+    width: 164px;
+    height: 39px;
+    display: flex;
+    align-items: center;
+    background: var(--white);
+    box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.15);
+    border-radius: 50px;
+    justify-content: center;
+    border: 0;
+}
+
+.deleteButtonCancel:hover {
+    background: #dddddd;
+    cursor: pointer;
+}
+
+.deleteButtonSave {
+    width: 164px;
+    height: 39px;
+    display: flex;
+    align-items: center;
+    background: var(--red);
+    box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.15);
+    border-radius: 50px;
+    margin-left: 15px;
+    border: 0;
+    justify-content: center;
+}
+
+.deleteButtonSave:hover {
+    background: var(--red-dark);
+    cursor: pointer;
+}
+
+.deleteButtonSave h3 {
+    color: var(--white);
+    align-self: center;
+}

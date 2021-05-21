@@ -147,6 +147,11 @@
     color: var(--white);
 }
 
+.campiregisteredButtonEdit:hover {
+    background: var(--yellow-dark);
+    cursor: pointer;
+}
+
 .campiregisteredButtonDelete {
     width: 85.6px;
     height: 25px;
@@ -161,6 +166,11 @@
     margin-left: 15px;
 }
 
+.campiregisteredButtonDelete:hover {
+    background: var(--red-dark);
+    cursor: pointer;
+}
+
 .campiregisteredButtonAttendant {
     width: 100px;
     height: 25px;
@@ -173,6 +183,11 @@
     line-height: 14px;
     color: var(--white);
     margin-left: 15px;
+}
+
+.campiregisteredButtonAttendant:hover {
+    background: var(--blue-dark);
+    cursor: pointer;
 }
 
 .campiregisteredActionContainer {
