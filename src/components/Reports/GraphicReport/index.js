@@ -11,8 +11,17 @@ export function GraphicReport(){
     const [data, setData] = useState({});
 
     async function getCategories() {
-        let id = localStorage.getItem("userCampusId");
-        let token = localStorage.getItem("userToken");
+        let token;
+        let id;
+
+        if (typeof window !== "undefined") {
+
+            id = localStorage.getItem("userCampusId");
+            token = localStorage.getItem("userToken");
+            
+        }
+            
+        
         try {
             const response = await api.get(`v1/campi/categories/${id}`, {
                 headers:{
@@ -32,8 +41,15 @@ export function GraphicReport(){
 
 
     async function getAlerts() {
-        let id = localStorage.getItem("userCampusId");
-        let token = localStorage.getItem("userToken");
+        let token;
+        let id;
+
+        if (typeof window !== "undefined") {
+
+            id = localStorage.getItem("userCampusId");
+            token = localStorage.getItem("userToken");
+            
+        }
         try {
             const response = await api.get(`v1/campi/alerts/${id}`, {
                 headers:{
