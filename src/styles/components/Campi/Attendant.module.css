@@ -1,0 +1,161 @@
+.attendantActionArea {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 15px;
+    padding-right: 15px;
+    border-bottom: 1px solid rgba(211, 211, 211, 0.75);
+    border-right: 1px solid rgba(211, 211, 211, 0.75);
+    border-left: 1px solid rgba(211, 211, 211, 0.75);
+}
+
+.attendantActionArea h4 {
+    font-family: 'Roboto', sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 21px;
+    color: var(--gray);
+}
+
+.attendantActionArea h4:first-child {
+    margin-left: 95px;
+}
+
+.attendantActionAreaButtons {
+    align-items: center;
+    margin-right: 90px;
+}
+
+.attendantButtonEdit {
+    width: 85.6px;
+    height: 25px;
+    border: 0;
+    background: var(--yellow);
+    box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.15);
+    border-radius: 10px;
+    font-weight: bold;
+    font-size: 12px;
+    line-height: 14px;
+    color: var(--white);
+}
+
+.attendantButtonEdit:hover {
+    background: var(--yellow-dark);
+    cursor: pointer;
+}
+
+.attendantButtonDelete {
+    width: 85.6px;
+    height: 25px;
+    border: 0;
+    background: var(--red);
+    box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.15);
+    border-radius: 10px;
+    font-weight: bold;
+    font-size: 12px;
+    line-height: 14px;
+    color: var(--white);
+    margin-left: 15px;
+}
+
+.attendantButtonDelete:hover {
+    background: var(--red-dark);
+    cursor: pointer;
+}
+
+.alertDelete {
+    font-family: "Roboto", sans-serif !important;
+}
+
+.alertDelete h2 {
+    color: var(--blue) !important;
+}
+
+.alertDelete div {
+    color: var(--blue) !important;
+}
+
+.alertDelete {
+    border-radius: 20px !important;
+}
+
+.alertDelete button{
+    font-weight: 600;
+    border-radius: 50px !important;
+    color: white !important;
+    padding: 10px 30px 10px 30px!important;
+}
+
+.alertDelete button:nth-child(4n) {
+    color: #345580 !important; 
+}
+
+
+.editAttendant strong {
+    margin-bottom: 30px;
+    color: var(--blue) !important;
+    font-size: 30px;
+    font-weight: 700;
+    align-self: center;
+}
+
+.editAttendant {
+    border-radius: 20px !important;
+    font-family: "Roboto", sans-serif !important;
+    max-width: 400px !important;
+}
+
+.editAttendant div div{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;  
+}
+
+.editAttendant div div div{
+    width: 100%;
+}
+.editAttendant label{
+    color: #1F4373;
+    font-size: 14px;
+    font-weight: 500;
+    margin-bottom: 5px;
+    margin-top: 15px;
+}
+
+.editAttendant select {
+    outline: none;
+    border: none;
+    background-color: transparent;
+    border-bottom: 1px solid var(--blue);
+    width: 80%;
+    margin-bottom: 30px;
+    font-size: 16px;
+    font-weight: 500;
+    font-family: 'Roboto', sans-serif;
+}
+
+/*GAMBIARRA PARA SUMIR COM UM LODING Q NAO SAIA DE JEITO NENHUM*/
+.editAttendant div:nth-child(-n+10) > div {
+    display: flex;
+    
+}
+
+.editAttendant div:nth-child(-n+10){
+    display: none;
+    
+}
+.editAttendant button{
+    font-weight: 600;
+    border-radius: 50px !important;
+    color: white !important;
+    padding: 10px 30px 10px 30px !important;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.25);
+    align-items: flex-end !important;
+    
+}
+
+.editAttendant button:nth-child(4n) {
+    color: #345580 !important; 
+   
+}

@@ -10,3 +10,197 @@
     justify-content: space-between;
     width: 100%;
 }
+
+.scrollbar {
+    width: "100%";
+    height: "100%";
+}
+
+.intervalButton{
+    width: 300px;
+    height: 39px;
+    display: flex;
+    align-items: center;
+    background: var(--blue);
+    box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.15);
+    border-radius: 50px;
+    margin-left: 15px;
+    border: 0;
+    justify-content: center;
+    color: var(--white);
+    font-family: 'Roboto', sans-serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 21px;
+}
+
+.intervalButton:hover{
+    background-color: var(--blue-dark);
+    cursor: pointer;
+}
+
+
+.intervalModal {
+    border-radius: 20px !important;
+    font-family: 'Roboto', sans-serif !important;
+    width: 500px !important;
+    padding: 10px !important;
+}
+
+.intervalModal strong {
+    margin-bottom: 30px;
+    color: var(--blue) !important;
+    font-size: 30px;
+    font-weight: 700;
+    align-self: center;
+}
+
+.intervalModal h2 {
+    font-size: 20px;
+    color: var(--blue);
+    font-weight: 600;
+    margin: 0px 0px 10px 0px ;
+}
+
+.intervalModal div div{
+    display: flex;
+    flex-direction: column;
+    align-items: center;  
+}
+
+.intervalModal span {
+
+    border-radius: 10px 10px 0px 0px;
+    width: 70%;
+    display: flex;
+    align-items: flex-start;
+    padding: 5px;
+    margin-top: 10px;
+    flex-direction: column;
+    margin-bottom: 20px;
+}
+
+.intervalModal span:nth-child(3n){
+    width: 70%;
+    text-align: left;
+    
+}
+
+.intervalModal span:nth-child(4n){
+    width: 30%;
+    text-align: left;
+    display: flex;
+    margin: 0;
+    padding: 0;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    margin-top: 10px;
+}
+
+.intervalModal span:nth-child(4n) label{
+    width: 100%;
+    margin-right: 20px;
+    margin: 0;
+    padding: 0;
+}
+
+.intervalModal span:nth-child(4n) input{
+    width: 30%;
+    margin-right: 20px;
+    margin: 0;
+    padding: 0;
+}
+
+.intervalModal span span{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    align-items: center;
+    padding: 0;
+    margin: 0;
+}
+
+.intervalModal span span span{
+    display: flex;
+    flex-direction: row;
+    width: 45%;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    margin: 0;
+}
+
+.intervalModal span span span input{
+    width: 40%;
+    margin: 0;
+    padding: 0;
+    margin-left: 20px;
+}
+
+.intervalModal span span span label{
+   width: 100%;
+   margin: 0;
+   padding: 0;
+}
+
+.intervalModal span span input{
+    width: 100%;
+}
+
+.intervalModal label{
+    color: #1F4373;
+    font-size: 14px;
+    font-weight: 500;
+    margin: 0;
+}
+
+/*GAMBIARRA PARA SUMIR COM UM LODING Q NAO SAIA DE JEITO NENHUM*/
+.intervalModal div:nth-child(-n+10) > div {
+    display: flex;
+    
+}
+
+.intervalModal div:nth-child(-n+10){
+    display: none;
+    
+}
+.intervalModal button{
+    font-weight: 600;
+    border-radius: 50px !important;
+    color: #345580 !important; 
+    padding: 10px 30px 10px 30px !important;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.25);
+    align-items: flex-end !important;
+}
+
+.intervalModal input {
+    border: none;
+    border-bottom: 1px solid #1F4373;
+    width: 100%;
+    font-size: 18px;
+    padding: 5px 5px;
+    background-color: #EBEFF2;
+    cursor: pointer;
+}
+
+.intervalModal input:focus {
+    outline: 0;
+    
+}
+
+.intervalModal button{
+    font-weight: 600;
+    border-radius: 50px !important;
+    color: white !important;
+    padding: 10px 30px 10px 30px !important;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.25);
+    align-items: flex-end !important;
+    
+}
+
+.intervalModal button:nth-child(4n) {
+    color: #345580 !important; 
+   
+}

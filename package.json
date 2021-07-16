@@ -8,9 +8,24 @@
     "start": "next start"
   },
   "dependencies": {
-    "next": "10.0.8",
+    "@lottiefiles/lottie-player": "^1.0.6",
+    "@react-pdf/renderer": "^2.0.16",
+    "axios": "^0.21.1",
+    "chart.js": "^3.4.1",
+    "leaflet-defaulticon-compatibility": "^0.1.1",
+    "leaflet-geosearch": "^3.3.2",
+    "moment": "^2.29.1",
+    "next": "^10.2.3",
     "react": "^17.0.1",
+    "react-chartjs-2": "^3.0.3",
+    "react-custom-popup": "^1.0.30",
+    "react-custom-scrollbars-2": "^4.4.0",
     "react-dom": "^17.0.1",
-    "react-icons": "^4.2.0"
+    "react-icons": "^4.2.0",
+    "react-leaflet": "^3.2.0",
+    "socket.io-client": "^2.3.0",
+    "sweetalert2": "^11.0.16",
+    "sweetalert2-react-content": "^4.1.0",
+    "telefone": "^1.2.2"
   }
 }

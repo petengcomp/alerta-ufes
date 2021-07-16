@@ -1,13 +1,19 @@
 import { useContext } from 'react';
 import { TopbarContext } from '../../contexts/TopbarContexts';
 import styles from '../../styles/components/Topbar.module.css';
-
+import { AlertInfoContext } from '../../contexts/AlertInfoContexts';
 
 export function Topbar(){
+    const {  
+        qtdAlerts 
+    } = useContext(AlertInfoContext)
+
     const { 
         showNotification,
-        showProfile,
+        LogoutProfile,
     } = useContext(TopbarContext)
+
+    
 
     return(
         <div className={styles.topbarContainer}>
@@ -18,10 +24,10 @@ export function Topbar(){
                 onClick={showNotification}
             />
             <img 
-                width="70px" 
-                src="icons/avatar.svg" 
-                alt="Avatar" 
-                onClick={showProfile}
+                width="30px" 
+                src="icons/log-out.svg" 
+                alt="Logout" 
+                onClick={LogoutProfile}
             />
         </div>
     )

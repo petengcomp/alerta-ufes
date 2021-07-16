@@ -1,0 +1,131 @@
+.containerAttendants {
+    flex: 1;
+    padding-left: 25px;
+    padding-right: 25px;
+    font-family: 'Roboto', sans-serif;
+    font-style: normal;
+    
+}
+
+.containerAttendantsLoading{
+    flex: 1;
+    padding-left: 25px;
+    padding-right: 25px;
+    font-family: 'Roboto', sans-serif;
+    font-style: normal;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.emptyContainer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.attendantsHeader {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+}
+
+.back {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin: 0;
+    width: 100px;
+    cursor: pointer;
+}
+
+.actionsAttendants {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.actionsAttendants div{
+    display: flex;
+    flex-direction: column;
+}
+
+.actionsAttendants div label{
+    color: var(--blue);
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500;
+    font-size: 14px;
+
+}
+
+.actionsAttendants div input{
+    border: 0;
+    border-bottom: 1px solid var(--blue);
+    width: 300px;
+    padding: 5px 5px 5px 5px;
+    outline: none;
+    font-size: 16px;
+}
+
+.attendantsButton {
+    width: 164px;
+    height: 39px;
+    display: flex;
+    padding: 3px;
+    align-items: center;
+    background: var(--blue);
+    box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.15);
+    border-radius: 50px;
+    margin-left: 15px;
+    border: 0;
+    justify-content: center;
+    color: var(--white);
+    font-family: 'Roboto', sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 13px;
+    line-height: 21px;
+}
+
+.attendantsButton:hover {
+    cursor: pointer;
+    filter: brightness(90%);
+}
+
+.attendantsButton:disabled{
+    cursor: not-allowed;
+    filter: opacity(50%);
+}
+
+.attendantsActionBoxTitle {
+    display: flex;
+    justify-content: space-between;
+    padding-left: 30px;
+    padding-right: 170px;
+    border: 1px solid rgba(211, 211, 211, 0.75);
+    border-radius: 5px 5px 0px 0px;
+}
+
+.attendantsActionBoxTitle h3 {
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 23px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: var(--gray);
+}
+
+.attendantsActionBoxTitle h3:first-child {
+    margin-left: 100px;
+}
+
+.attendantsActionContainer {
+    height: calc(100vh - 500px);
+    overflow: auto;
+    position: relative;
+}

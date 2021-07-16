@@ -1,27 +1,199 @@
 import styles from '../../../styles/components/Report/AlertReport.module.css';
+import { useState, useEffect, useDebugValue } from 'react'
+import api from '../../../services/api';
+import moment from 'moment';
+import {MdChevronLeft, MdChevronRight} from 'react-icons/md'
 
-export function AlertReport(){
-    return(
-       <div className={styles.card}>
-           <text className={styles.title}>Alertas</text>
-           <div className={styles.grid}>
+import format from 'telefone/format';
+
+import Swal from 'sweetalert2';
+
+export function AlertReport(props) {
+    const id = localStorage.getItem('ALERTAUFESuserCampusId');
+    const token = localStorage.getItem('ALERTAUFESuserToken');
+    const [nRows, setNRows] = useState(5);
+    const [page, setPage] = useState(0);
+    const [alertList, setAlertList] = useState([]);
+    const [limitedAlertList, setlimitedAlertList] = useState([]);
+    const [start, setStart] = useState('');
+    const [end, setEnd] = useState('');
+
+    function handleClickView(alerta){
+        let status;
+        if(alerta.status === 'não respondido')
+            status = "styles.naorespondido"
+        if(alerta.status === 'respondido')
+            status = "styles.respondido"
+        if(alerta.status === 'finalizado')
+            status = "styles.final"
+        
+        console.log(status)
+        Swal.fire({  
+            html:
+                `<div>`+
+                    `<strong>${alerta.status}</strong>`+      
+                    `<h2 id="swal-input1" type="text" placeholder="">${alerta.requester.login}</h2>` +
+                    `<h2 id="swal-input1" type="text" placeholder="">${format(alerta.requester.cellphone)}</h2>` +
+                    '<span>' +
+                        '<label>RESPOSTA RÁPIDA</label>'+
+                        '<p>'+  
+                            `${alerta.feedback? alerta.feedback.name : "-"}`+    
+                        '</p>'+   
+                    '</span>' +
+                    '<span>' +
+                        '<label>CATEGORIAS</label>'+
+                        '<p>'+  
+                            `${alerta.category? alerta.category.name : "-"}`+    
+                        '</p>'+  
+                    '</span>' +
+                    '<span>' +
+                        '<label>DESCRIÇÃO</label>'+
+                        `<p>${alerta.description? alerta.description : "-"}</p>`+   
+                    '</span>' +
+                `<div>`,
+            background: '#EBEFF2',
+            backdrop: 'rgba(0,0,0,0.7)',
+            customClass: `${styles.finalizado} ${alerta.status === "não respondido"? styles.naorespondido : alerta.status === "respondido" && styles.respondido}`,
+            focusConfirm: false,
+            confirmButtonColor: '#FFF',
+            confirmButtonText:'FECHAR',           
+        })
+    }
+
+    async function getAlerts() {
+        try {
+            const response = await api.get(`v1/campi/alerts/${id}`, {
+                headers: {
+                    'Authorization': `Bearer ${token}`
+                }
+            });
+            let aux = response.data.alerts;
+            aux.sort((a, b)=>{
+                let ast = a.status;
+                let av = 0;
+                let bst = b.status;
+                let bv = 0;
+                if(ast === "finalizado"){
+                    av = 3;
+                }else if(ast === "respondido"){
+                    av = 2;
+                }else if(ast == "não respondido"){
+                    av = 1;
+                }
+                if(bst === "finalizado"){
+                    bv = 3;
+                }else if(ast === "respondido"){
+                    bv = 2;
+                }else if (bst = "não respondido"){
+                    bv = 1;
+                }
+                if(av < bv) {
+                    return -1;
+                }else if(av > bv){
+                    return 1;
+                }else{
+                    return 0;
+                }
+            });
+            setAlertList(aux);
+            setlimitedAlertList(aux.slice(0, 5));
+        }
+        catch (err) {
+            console.log(err);
+        }
+    }
+
+    function changePage(num){
+        if(num === -1 && page === 0){
+            return;
+        }
+        if(num === 1 && (page+1)*nRows > alertList.length){
+            return;
+        };
+        const newPage = page+num;
+        setPage(newPage);
+        setlimitedAlertList(alertList.slice(nRows*newPage, nRows*(newPage+1)));
+    }
+
+    function changeNRows(event){
+        let value = event.target.value;
+        setNRows(value);
+        setlimitedAlertList(alertList.slice(value*page, value*(page+1)));
+    }
+
+    useEffect(async () => {
+        await getAlerts();
+    }, []);
+
+    async function filterBydate(){
+        if(start==='' && end === ''){
+            setlimitedAlertList(alertList);
+            return;
+        }
+        let auxArray = alertList.filter((alert, index)=>{
+            return (moment(alert.createdAt).isAfter(start, "DD-MM-YYYY") && moment(alert.createdAt).isBefore(end, "DD-MM-YYYY"));
+        })
+        console.log(auxArray);
+        setlimitedAlertList(auxArray);
+    }
+
+    useEffect(async ()=>{
+        setEnd(props.endDate);
+        setStart(props.startDate);
+        filterBydate();
+    }, [props.startDate, props.endDate]);
+
+
+    return (
+        <div className={styles.card}>
+            <p className={styles.title}>Alertas</p>
+            <div className={styles.grid}>
                 <div className={styles.header}>
-                    <text>Usuário</text>
-                    <text>Data de Emissão</text>
-                    <text>Data Finalizado</text>
-                    <text>Status</text>
-                    <text>Ações</text>
+                    <p>Usuário</p>
+                    <p>Data de Emissão</p>
+                    <p>Data Finalizado</p>
+                    <p>Status</p>
+                    <p>Ações</p>
                 </div>
-                <div className={styles.row}>
-                    <text>Fulano de tal</text>
-                    <text>05/10/2019</text>
-                    <text>05/10/2019</text>
-                    <text>Status</text>
-                    <text>Ações</text>
+                {(limitedAlertList).map((alert, index)=>{return (
+                    <div key={index} className={styles.row}>
+                        <p className={styles.rowText}>{alert.requester.login}</p>
+                        <p className={styles.rowText}>{moment(alert.createdAt).format("DD/MM/YYYY")}</p>
+                        <p className={styles.rowText}>{alert.status !== "finalizado"? "-" :moment(alert.updatedAt).format("DD/MM/YYYY")}</p>
+                        <div className={styles.rowCell}><div className={styles.status}>{alert.status==="finalizado"? 
+                            <div className={styles.finished} >FINALIZADO</div>:
+                            alert.status==="respondido"? 
+                                <div className={styles.answered}>RESPONDIDO</div>:
+                                <div className={styles.waiting}>AGUARDANDO</div>
+                        }</div></div>
+                        <div className={styles.rowCell}><div className={styles.status}>{
+                            <button onClick={() => handleClickView(alert)} className={styles.button} >VISUALIZAR</button>
+                        }</div></div>
+                    </div>)})}
+            </div>
+            <div className={styles.tableFooter}>
+                <div >
+                    <p>Linhas por página:</p>
+                    <select onChange={(e)=>changeNRows(e)} defaultValue={5}>
+                        <option value={5}>5</option>
+                        <option value={10}>10</option>
+                        <option value={20}>20</option>
+                        <option value={50}>50</option>
+                        <option value={100}>100</option>
+                    </select>
                 </div>
-           </div>
+                <div >
+                    <p>{`${(1+(page*nRows))}-${((page+1)*nRows)>alertList.length?alertList.length:(page+1)*nRows} de ${alertList.length} alertas`}</p>
+                    <div className={styles.footerButton} onClick={()=>changePage(-1)}>
+                        <MdChevronLeft  size={32}/>
+                    </div>
+                    <div className={styles.footerButton} onClick={()=>changePage(1)}>
+                        <MdChevronRight size={32}/>
+                    </div>
+                </div>
+            </div>
 
-       </div>
+        </div>
     )
 
 }

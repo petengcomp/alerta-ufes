@@ -8,9 +8,13 @@
     margin-top: 3rem;
     padding-left: 3rem;
     padding-right: 3rem;
+    
 }
 
 .headerSubContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
     border-bottom: 0.5px solid var(--gray);
     transform: rotate(-0.01deg);
 }

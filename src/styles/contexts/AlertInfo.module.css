@@ -1,0 +1,303 @@
+.naoRespondido {
+    border-radius: 20px !important;
+    font-family: 'Roboto', sans-serif !important;
+    width: 500px !important;
+    padding: 10px !important;
+}
+
+.naoRespondido strong {
+    margin-bottom: 30px;
+    color: var(--blue) !important;
+    font-size: 30px;
+    font-weight: 700;
+    align-self: center;
+}
+
+.naoRespondido h2 {
+    font-size: 20px;
+    color: var(--blue);
+    font-weight: 600;
+    margin: 0px 0px 10px 0px ;
+}
+
+.naoRespondido div div{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;  
+}
+
+.naoRespondido label{
+    color: #1F4373;
+    font-size: 14px;
+    font-weight: 500;
+    margin-bottom: 5px;
+    margin-top: 15px;
+}
+
+.naoRespondido select {
+    outline: none;
+    border: none;
+    background-color: transparent;
+    border-bottom: 1px solid var(--blue);
+    width: 70%;
+    margin-bottom: 30px;
+    height: 30px;
+    font-size: 16px;
+    font-weight: 400;
+    color: #545454;
+    font-family: 'Roboto', sans-serif;
+    margin-top: 0px;
+}
+
+/*GAMBIARRA PARA SUMIR COM UM LODING Q NAO SAIA DE JEITO NENHUM*/
+.naoRespondido div:nth-child(-n+10) > div {
+    display: flex;
+    
+}
+
+.naoRespondido div:nth-child(-n+10){
+    display: none;
+    
+}
+.naoRespondido button{
+    font-weight: 600;
+    border-radius: 50px !important;
+    color: white !important;
+    padding: 10px 30px 10px 30px !important;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.25);
+    align-items: flex-end !important;
+    
+}
+
+.naoRespondido button:nth-child(4n) {
+    color: #345580 !important; 
+   
+}
+
+.finalizado button:nth-child(n) {
+    color: #345580 !important; 
+   
+}
+
+.naoRespondido select:disabled {
+    background-color: rgba(0, 0, 0, 0.08);
+}
+
+.naoRespondido textarea:disabled {
+    background-color: rgba(0, 0, 0, 0.08);
+}
+
+.respondido {
+    border-radius: 20px !important;
+    font-family: 'Roboto', sans-serif !important;
+    width: 500px !important;
+    padding: 10px !important;
+}
+
+.respondido strong {
+    margin-bottom: 30px;
+    color: var(--blue) !important;
+    font-size: 30px;
+    font-weight: 700;
+    align-self: center;
+}
+
+.respondido h2 {
+    font-size: 20px;
+    color: var(--blue);
+    font-weight: 600;
+    margin: 0px 0px 10px 0px ;
+}
+
+.respondido div div{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;  
+}
+
+.respondido span {
+    background-color: rgba(0, 0, 0, 0.08);
+    border-radius: 10px 10px 0px 0px;
+    width: 70%;
+    display: flex;
+    align-items: flex-start;
+    padding: 5px;
+    margin-top: 10px;
+    flex-direction: column;
+    border-bottom: 1px solid var(--blue);
+}
+
+.respondido span label{
+    margin: 0;
+}
+
+.respondido span p{
+    padding: 0;
+    margin: 5px 0px 0px 0px;
+    font-size: 16px;
+    font-weight: 400;
+    color: #545454;
+    font-family: 'Roboto', sans-serif;
+    
+}
+
+.respondido label{
+    color: #1F4373;
+    font-size: 14px;
+    font-weight: 500;
+    margin-bottom: 5px;
+    margin-top: 15px;
+}
+
+.respondido select {
+    outline: none;
+    border: none;
+    background-color: transparent;
+    border-bottom: 1px solid var(--blue);
+    width: 70%;
+    margin-bottom: 30px;
+    height: 30px;
+    font-size: 16px;
+    font-weight: 400;
+    color: #545454;
+    font-family: 'Roboto', sans-serif;
+    margin-top: 0px;
+}
+
+.respondido textarea {
+    background-color: transparent;
+    border: none;
+    outline: none;
+    border-bottom: 1px solid var(--blue);
+    resize: none;
+    width:100%;
+    height:200px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 15px;
+    color: #545454;
+    padding: 10px;
+    border-radius: 10px 10px 0px 0px;
+}
+
+/*GAMBIARRA PARA SUMIR COM UM LODING Q NAO SAIA DE JEITO NENHUM*/
+.respondido div:nth-child(-n+10) > div {
+    display: flex;
+    
+}
+
+.respondido div:nth-child(-n+10){
+    display: none;
+    
+}
+.respondido button{
+    font-weight: 600;
+    border-radius: 50px !important;
+    color: white !important;
+    padding: 10px 30px 10px 30px !important;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.25);
+    align-items: flex-end !important;
+    
+}
+
+.respondido button:nth-child(4n) {
+    color: #345580 !important; 
+}
+
+
+
+.finalizado {
+    border-radius: 20px !important;
+    font-family: 'Roboto', sans-serif !important;
+    width: 500px !important;
+    padding: 10px !important;
+}
+
+.finalizado strong {
+    margin-bottom: 30px;
+    color: var(--blue) !important;
+    font-size: 30px;
+    font-weight: 700;
+    align-self: center;
+}
+
+.finalizado h2 {
+    font-size: 20px;
+    color: var(--blue);
+    font-weight: 600;
+    margin: 0px 0px 10px 0px ;
+}
+
+.finalizado div div{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;  
+}
+
+.finalizado span {
+    background-color: rgba(0, 0, 0, 0.08);
+    border-radius: 10px 10px 0px 0px;
+    width: 70%;
+    display: flex;
+    align-items: flex-start;
+    padding: 5px;
+    margin-top: 10px;
+    flex-direction: column;
+    margin-bottom: 20px;
+    border-bottom: 1px solid var(--blue);
+}
+
+.finalizado span:nth-child(3n){
+    width: 100%;
+    text-align: left;
+}
+
+.finalizado span p{
+    padding: 0;
+    margin: 5px 0px 0px 0px;
+    font-size: 16px;
+    font-weight: 400;
+    color: #545454;
+    font-family: 'Roboto', sans-serif;
+    
+}
+
+.finalizado label{
+    color: #1F4373;
+    font-size: 14px;
+    font-weight: 500;
+    margin: 0;
+}
+
+.finalizado textarea {
+    background-color: transparent;
+    border: none;
+    outline: none;
+    border-bottom: 1px solid var(--blue);
+    resize: none;
+    width:100%;
+    height:200px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 15px;
+    color: #545454;
+    padding: 10px;
+    border-radius: 10px 10px 0px 0px;
+}
+
+/*GAMBIARRA PARA SUMIR COM UM LODING Q NAO SAIA DE JEITO NENHUM*/
+.finalizado div:nth-child(-n+10) > div {
+    display: flex;
+    
+}
+
+.finalizado div:nth-child(-n+10){
+    display: none;
+    
+}
+.finalizado button{
+    font-weight: 600;
+    border-radius: 50px !important;
+    color: #345580 !important; 
+    padding: 10px 30px 10px 30px !important;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.25);
+    align-items: flex-end !important;
+}

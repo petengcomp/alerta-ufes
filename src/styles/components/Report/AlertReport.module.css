@@ -7,8 +7,8 @@
     margin-top: 25px;
     box-shadow: 2px 3px 6px rgba(0, 0, 0, 0.25);
     border-radius: 25px;
-    max-height: 450px;
     justify-content: space-between;
+    background-color: #FFFFFF;
 }
 
 .title{
@@ -23,33 +23,261 @@
 .grid{
     display: table;
     margin: 0px 50px;
-    border-spacing: 0px 25px;
+    border-spacing: 0px 25px;    
 }
 
 .header{
     display: table-row;
     flex-direction: row;
-    justify-content: space-between;
     margin-bottom: 25px;
 }
 
 .row{
     display: table-row;
     flex-direction: row;
-    justify-content: space-between;
     margin-bottom: 25px;
+    height: 25px;
 }
 
-.header text {
+.header p {
     display: table-cell;
     color: var(--gray);
     font-weight: 500;
     font-family: 'Roboto';
 }
 
-.row text {
+.rowText {
     display: table-cell;
     color: var(--gray);
     font-weight: 300;
     font-family: 'Roboto';
+}
+
+.rowCell{
+    display: table-cell;
+}
+
+.status {
+    display: flex;
+    justify-items: flex-start;
+}
+
+.waiting {
+    display: flex;
+    color: var(--red);
+    font-weight: 500;
+    font-family: 'Roboto';
+    border: solid;
+    border-radius: 5PX;
+    border-width: 1px;
+    border-color: var(--red);
+    justify-content: center;   
+    align-items: center; 
+    padding: 5px;
+}
+
+.answered {
+    display: flex;
+    color: var(--yellow);
+    font-weight: 500;
+    font-family: 'Roboto';
+    border: solid;
+    border-radius: 5PX;
+    border-width: 1px;
+    border-color: var(--yellow);   
+    justify-content: center;
+    align-items: center;
+    padding: 5px;
+}
+
+.finished {
+    display: flex;
+    color: var(--blue);
+    font-weight: 500;
+    font-family: 'Roboto';
+    border: solid;
+    border-radius: 5PX;
+    border-width: 1px;
+    border-color: var(--blue);  
+    justify-content: center; 
+    align-items: center;
+    padding: 5px;
+}
+
+.button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 120px;
+    height: 30px;
+    border-radius: 20px;
+    border: none;
+    outline: none;
+    box-shadow: none;
+    background: var(--blue);
+    box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.15);
+    color: var(--white);
+    font-family: 'Roboto', sans-serif;
+    font-style: normal;
+    font-weight: 500;
+}
+.button:hover{
+    background-color: var(--blue-dark);
+    cursor: pointer;
+}
+
+.tableFooter{
+    margin: 25px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.tableFooter div {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    
+}
+
+.tableFooter p {
+    align-self: center;
+    font-family: 'Roboto';
+    color: var(--text);
+    margin-right: 10px;
+}
+
+.tableFooter select {
+    height: 25px;
+    align-self: center;
+    box-shadow: 0 0 0 0;
+    border: 0 none;
+    border-bottom: 1px solid var(--blue);
+    outline: 0;
+    font-family: 'Roboto';
+    color: var(--text);
+
+}
+.tableFooter option {
+    border: 0 transparent;
+    outline: 0;
+    border-bottom: 1px solid var(--blue);
+    border-color: transparent;
+}
+
+.footerButton {
+    margin: 0px 10px;
+    color: var(--gray);
+}
+.footerButton:hover {
+    color: var(--text);
+}
+
+
+.finalizado {
+    border-radius: 20px !important;
+    font-family: 'Roboto', sans-serif !important;
+    width: 500px !important;
+    padding: 10px !important;
+}
+
+.finalizado strong {
+    margin-bottom: 30px;
+    color: var(--blue) !important;
+    font-size: 30px;
+    font-weight: 700;
+    align-self: center;
+}
+
+.finalizado h2 {
+    font-size: 20px;
+    color: var(--blue);
+    font-weight: 600;
+    margin: 0px 0px 10px 0px ;
+}
+
+.finalizado div div{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;  
+}
+
+.finalizado span {
+    background-color: rgba(0, 0, 0, 0.08);
+    border-radius: 10px 10px 0px 0px;
+    width: 70%;
+    display: flex;
+    align-items: flex-start;
+    padding: 5px;
+    margin-top: 10px;
+    flex-direction: column;
+    margin-bottom: 20px;
+    border-bottom: 1px solid var(--blue);
+}
+
+.finalizado span:nth-child(3n){
+    width: 100%;
+    text-align: left;
+}
+
+.finalizado span p{
+    padding: 0;
+    margin: 5px 0px 0px 0px;
+    font-size: 16px;
+    font-weight: 400;
+    color: #545454;
+    font-family: 'Roboto', sans-serif;
+    
+}
+
+.finalizado label{
+    color: #1F4373;
+    font-size: 14px;
+    font-weight: 500;
+    margin: 0;
+}
+
+.finalizado textarea {
+    background-color: transparent;
+    border: none;
+    outline: none;
+    border-bottom: 1px solid var(--blue);
+    resize: none;
+    width:100%;
+    height:200px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 15px;
+    color: #545454;
+    padding: 10px;
+    border-radius: 10px 10px 0px 0px;
+}
+
+/*GAMBIARRA PARA SUMIR COM UM LODING Q NAO SAIA DE JEITO NENHUM*/
+.finalizado div:nth-child(-n+10) > div {
+    display: flex;
+    
+}
+
+.finalizado div:nth-child(-n+10){
+    display: none;
+    
+}
+.finalizado button{
+    font-weight: 600;
+    border-radius: 50px !important;
+    color: #345580 !important; 
+    padding: 10px 30px 10px 30px !important;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.25);
+    align-items: flex-end !important;
+}
+
+.naorespondido span{
+    display: none !important;
+}
+
+.respondido span:nth-child(3n){
+    display: none !important;
+}
+.respondido span:nth-child(5n){
+    display: none !important;
 }

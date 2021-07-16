@@ -24,6 +24,10 @@
     align-self: center;
 }
 
+.campiregisteredContainer img{
+    size: 80%;
+}
+
 .campiregisteredTop {
     display: flex;
     justify-content: space-between;
@@ -71,6 +75,7 @@
     width: 164px;
     height: 39px;
     display: flex;
+    padding: 3px;
     align-items: center;
     background: var(--blue);
     box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.15);
@@ -81,9 +86,14 @@
     color: var(--white);
     font-family: 'Roboto', sans-serif;
     font-style: normal;
-    font-weight: bold;
-    font-size: 18px;
+    font-weight: 500;
+    font-size: 13px;
     line-height: 21px;
+}
+
+.campiregisteredTop button:hover {
+    cursor: pointer;
+    filter: brightness(90%);
 }
 
 .campiregisteredActionBox {
@@ -112,85 +122,134 @@
     color: var(--gray);
 }
 
-.campiregisteredActionArea {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding-left: 15px;
-    padding-right: 15px;
-    border-bottom: 1px solid rgba(211, 211, 211, 0.75);
-}
-
-.campiregisteredActionArea h4 {
-    font-family: 'Roboto', sans-serif;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 18px;
-    line-height: 21px;
-    color: var(--gray);
-}
-
-.campiregisteredActionAreaButtons {
-    align-items: center;
-}
-
-.campiregisteredButtonEdit {
-    width: 85.6px;
-    height: 25px;
-    border: 0;
-    background: var(--yellow);
-    box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.15);
-    border-radius: 10px;
-    font-weight: bold;
-    font-size: 12px;
-    line-height: 14px;
-    color: var(--white);
-}
-
-.campiregisteredButtonEdit:hover {
-    background: var(--yellow-dark);
-    cursor: pointer;
-}
-
-.campiregisteredButtonDelete {
-    width: 85.6px;
-    height: 25px;
-    border: 0;
-    background: var(--red);
-    box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.15);
-    border-radius: 10px;
-    font-weight: bold;
-    font-size: 12px;
-    line-height: 14px;
-    color: var(--white);
-    margin-left: 15px;
-}
-
-.campiregisteredButtonDelete:hover {
-    background: var(--red-dark);
-    cursor: pointer;
-}
-
-.campiregisteredButtonAttendant {
-    width: 100px;
-    height: 25px;
-    border: 0;
-    background: var(--blue);
-    box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.15);
-    border-radius: 10px;
-    font-weight: bold;
-    font-size: 12px;
-    line-height: 14px;
-    color: var(--white);
-    margin-left: 15px;
-}
-
-.campiregisteredButtonAttendant:hover {
-    background: var(--blue-dark);
-    cursor: pointer;
-}
-
 .campiregisteredActionContainer {
     height: calc(100vh - 420px);
     overflow: auto;
+    position: relative;
+}
+
+.editCampus strong {
+    margin-bottom: 30px;
+    color: var(--blue) !important;
+    font-size: 30px;
+    font-weight: 700;
+    align-self: center;
+}
+
+.editCampus {
+    border-radius: 20px !important;
+    font-family: "Roboto", sans-serif !important;
+}
+
+.editCampus div div{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;  
+}
+
+.editCampus div div div label{
+    color: #1F4373;
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 5px;
+    
+}
+
+.editCampus div div div{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 15px;
+    width: 100%;
+}
+
+.editCampus .swal2-loader {
+    display: none;
+}
+
+.editCampus input {
+    border: none;
+    border-bottom: 1px solid #1F4373;
+    width: 100%;
+    font-size: 18px;
+    padding: 5px 10px;
+    background-color: #EBEFF2;
+}
+
+.editCampus input:focus {
+    outline: 0;
+    
+}
+
+/*GAMBIARRA PARA SUMIR COM UM LODING Q NAO SAIA DE JEITO NENHUM*/
+.editCampus div:nth-child(-n+10) > div {
+    display: flex;
+    
+}
+
+.editCampus div:nth-child(-n+10){
+    display: none;
+    
+}
+.editCampus button{
+    font-weight: 600;
+    border-radius: 50px !important;
+    color: white !important;
+    padding: 10px 30px 10px 30px !important;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.25);
+    align-items: flex-end !important;
+    
+}
+
+.editCampus button:nth-child(4n) {
+    color: #345580 !important; 
+   
+}
+
+.tableFooter{
+    margin: 20px;
+    bottom: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.tableFooter div {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    
+}
+
+.tableFooter p {
+    align-self: center;
+    font-family: 'Roboto';
+    color: var(--text);
+    margin-right: 10px;
+}
+
+.tableFooter select {
+    height: 25px;
+    align-self: center;
+    box-shadow: 0 0 0 0;
+    border: 0 none;
+    border-bottom: 1px solid var(--blue);
+    outline: 0;
+    font-family: 'Roboto';
+    color: var(--text);
+
+}
+.tableFooter option {
+    border: 0 transparent;
+    outline: 0;
+    border-bottom: 1px solid var(--blue);
+    border-color: transparent;
+}
+
+.footerButton {
+    margin: 0px 10px;
+    color: var(--gray);
+}
+.footerButton:hover {
+    color: var(--text);
 }

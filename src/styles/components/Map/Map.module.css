@@ -1,0 +1,14 @@
+.popup {
+    cursor: pointer;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+
+    font-family: 'Roboto', sans-serif;
+}
+
+.popup img{
+    width: 15px;
+    margin-left: 5px;
+}
