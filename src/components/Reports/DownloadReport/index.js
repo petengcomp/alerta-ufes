@@ -5,8 +5,7 @@ import api from '../../../services/api'
 import ReactPDF, { Page, Text, View, Document, StyleSheet, PDFViewer, PDFDownloadLink } from '@react-pdf/renderer'
 
 export function DownloadReport() {
-    const id = localStorage.getItem('ALERTAUFESuserCampusId');
-    const token = localStorage.getItem('ALERTAUFESuserToken');
+
     const [marked1, setMarked1] = useState(false);
     const [marked2, setMarked2] = useState(false);
     const [marked3, setMarked3] = useState(false);
@@ -48,8 +47,8 @@ export function DownloadReport() {
     }
 
     async function getCategories() {
-        // id = localStorage.getItem("userCampusId");
-        // token = localStorage.getItem("userToken");
+        let id = localStorage.getItem("userCampusId");
+        let token = localStorage.getItem("userToken");
         try {
             const response = await api.get(`v1/campi/categories/${id}`, {
                 headers:{
@@ -64,8 +63,8 @@ export function DownloadReport() {
 
 
     async function getFeedbacks() {
-        // id = localStorage.getItem("userCampusId");
-        // token = localStorage.getItem("userToken");
+        let id = localStorage.getItem("userCampusId");
+        let token = localStorage.getItem("userToken");
         try {
             const response = await api.get(`v1/campi/feedbacks/${id}`, {
                 headers:{

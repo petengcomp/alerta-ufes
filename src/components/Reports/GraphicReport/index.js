@@ -5,16 +5,14 @@ import { useState, useEffect } from 'react';
 
 
 export function GraphicReport(){
-    const id = localStorage.getItem('ALERTAUFESuserCampusId');
-    const token = localStorage.getItem('ALERTAUFESuserToken');
     const [categories, setCategories] = useState([]);
     const [categoryCounters, setCategoryCounters] = useState([]);
     const [alerts, setAlerts] = useState([]);
     const [data, setData] = useState({});
 
     async function getCategories() {
-        // id = localStorage.getItem("userCampusId");
-        // token = localStorage.getItem("userToken");
+        let id = localStorage.getItem("userCampusId");
+        let token = localStorage.getItem("userToken");
         try {
             const response = await api.get(`v1/campi/categories/${id}`, {
                 headers:{
@@ -34,8 +32,8 @@ export function GraphicReport(){
 
 
     async function getAlerts() {
-        // id = localStorage.getItem("userCampusId");
-        // token = localStorage.getItem("userToken");
+        let id = localStorage.getItem("userCampusId");
+        let token = localStorage.getItem("userToken");
         try {
             const response = await api.get(`v1/campi/alerts/${id}`, {
                 headers:{
