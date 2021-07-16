@@ -65,8 +65,8 @@ export function AlertReport(props) {
 
         if (typeof window !== "undefined") {
 
-            id = localStorage.getItem("userCampusId");
-            token = localStorage.getItem("userToken");
+            id = localStorage.getItem("ALERTAUFESuserCampusId");
+            token = localStorage.getItem("ALERTAUFESuserToken");
             
         }
         try {
