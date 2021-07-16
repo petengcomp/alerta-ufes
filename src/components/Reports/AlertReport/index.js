@@ -9,8 +9,7 @@ import format from 'telefone/format';
 import Swal from 'sweetalert2';
 
 export function AlertReport(props) {
-    const id = localStorage.getItem('ALERTAUFESuserCampusId');
-    const token = localStorage.getItem('ALERTAUFESuserToken');
+
     const [nRows, setNRows] = useState(5);
     const [page, setPage] = useState(0);
     const [alertList, setAlertList] = useState([]);
@@ -61,6 +60,15 @@ export function AlertReport(props) {
     }
 
     async function getAlerts() {
+        let token;
+        let id;
+
+        if (typeof window !== "undefined") {
+
+            id = localStorage.getItem("userCampusId");
+            token = localStorage.getItem("userToken");
+            
+        }
         try {
             const response = await api.get(`v1/campi/alerts/${id}`, {
                 headers: {
