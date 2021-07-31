@@ -6,46 +6,41 @@ import { useState, useEffect } from 'react';
 
 export function GraphicReport(){
     const [categories, setCategories] = useState([]);
-    const [categoryCounters, setCategoryCounters] = useState([]);
     const [alerts, setAlerts] = useState([]);
     const [data, setData] = useState({});
 
-    async function getCategories() {
-        let token;
-        let id;
+    // async function getCategories() {
+    //     let token;
+    //     let id;
 
-        if (typeof window !== "undefined") {
+    //     if (typeof window !== "undefined") {
 
-            id = localStorage.getItem("ALERTAUFESuserCampusId");
-            token = localStorage.getItem("ALERTAUFESuserToken");
+    //         id = localStorage.getItem("ALERTAUFESuserCampusId");
+    //         token = localStorage.getItem("ALERTAUFESuserToken");
             
-        }
+    //     }
             
         
-        try {
-            const response = await api.get(`v1/campi/categories/${id}`, {
-                headers:{
-                    'Authorization': `Bearer ${token}`
-                }});
-            let aux = [];
-            let aux2 = [];
-            response.data.categories.map((category)=>{aux.push({name:category.name, count: 0})
-            });
-            setCategories(aux);
-            setCategoryCounters(aux2);
-        }
-        catch (err) {
-            console.log(err);
-        }
-    }
+    //     try {
+    //         const response = await api.get(`v1/campi/categories/${id}`, {
+    //             headers:{
+    //                 'Authorization': `Bearer ${token}`
+    //             }});
+    //         let aux = [];
+    //         response.data.categories.map((category)=>{aux.push({name:category.name, count: 0})
+    //         });
+    //         setCategories(aux);
+    //     }
+    //     catch (err) {
+    //         console.log(err);
+    //     }
+    // }
 
 
     async function getAlerts() {
         let token;
         let id;
-
         if (typeof window !== "undefined") {
-
             id = localStorage.getItem("ALERTAUFESuserCampusId");
             token = localStorage.getItem("ALERTAUFESuserToken");
             
@@ -55,16 +50,22 @@ export function GraphicReport(){
                 headers:{
                     'Authorization': `Bearer ${token}`
                 }});
-            let aux = categories;
+            let aux = [];
+
             response.data.alerts.map((alert)=>{
-                aux.map((category, index)=>{
-                    if(alert.category !==null){
-                        if (category.name === alert.category.name){
-                            category.count ++;
+                if(alert.category !== null && aux.findIndex((category) => {return category.name === alert.category.name}) === -1){
+                    aux.push({name: alert.category.name, count: 1});
+                }else{
+                    aux.map((category, index)=>{
+                        if(alert.category !== null){
+                            if (category.name === alert.category.name){
+                                category.count ++;
+                            }
                         }
-                    }
-                })
+                    })
+                }
             });
+            console.log(aux);
             setCategories(aux);
             setAlerts(response.data.alerts);
         }
@@ -75,7 +76,6 @@ export function GraphicReport(){
 
     useEffect(()=>{
         getAlerts();
-        getCategories();
         getData();
     }, []);
 
