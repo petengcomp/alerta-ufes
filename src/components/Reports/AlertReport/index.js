@@ -14,6 +14,7 @@ export function AlertReport(props) {
     const [page, setPage] = useState(0);
     const [alertList, setAlertList] = useState([]);
     const [limitedAlertList, setlimitedAlertList] = useState([]);
+    const [fixedAlertList, setFixedAlertList] = useState([]);  // salvar a lista inteira
     const [start, setStart] = useState('');
     const [end, setEnd] = useState('');
 
@@ -76,35 +77,32 @@ export function AlertReport(props) {
                 }
             });
             let aux = response.data.alerts;
-            aux.sort((a, b)=>{
-                let ast = a.status;
-                let av = 0;
-                let bst = b.status;
-                let bv = 0;
-                if(ast === "finalizado"){
-                    av = 3;
-                }else if(ast === "respondido"){
-                    av = 2;
-                }else if(ast == "não respondido"){
-                    av = 1;
-                }
-                if(bst === "finalizado"){
-                    bv = 3;
-                }else if(ast === "respondido"){
-                    bv = 2;
-                }else if (bst = "não respondido"){
-                    bv = 1;
-                }
-                if(av < bv) {
-                    return -1;
-                }else if(av > bv){
-                    return 1;
-                }else{
-                    return 0;
-                }
-            });
+            // aux.sort((a, b)=>{
+                
+            //     let ast = a.status;
+            //     let av = 0;
+            //     let bst = b.status;
+            //     let bv = 0;
+            //     if(ast === "finalizado"){
+            //         av = 3;
+            //     }else if(ast === "respondido"){
+            //         av = 2;
+            //     }else if(ast === "não respondido"){
+            //         av = 1;
+            //     }
+            //     if(bst === "finalizado"){
+            //         bv = 3;
+            //     }else if(ast === "respondido"){
+            //         bv = 2;
+            //     }else if (bst === "não respondido"){
+            //         bv = 1;
+            //     }
+            //     return av-bv;
+            // });
+            console.log(aux);
+            setFixedAlertList(aux);
             setAlertList(aux);
-            setlimitedAlertList(aux.slice(0, 5));
+            setlimitedAlertList(aux.slice(nRows*page, nRows*(page+1)));
         }
         catch (err) {
             console.log(err);
@@ -133,16 +131,20 @@ export function AlertReport(props) {
         await getAlerts();
     }, []);
 
-    async function filterBydate(){
-        if(start==='' && end === ''){
-            setlimitedAlertList(alertList);
+    function filterBydate(){
+        if(props.startDate === '' && props.endDate === ''){
+            console.log("AEO0");
+            console.log(fixedAlertList);
+            setAlertList(fixedAlertList);
+            setlimitedAlertList(fixedAlertList.slice(nRows*page, nRows*(page+1)));
             return;
         }
-        let auxArray = alertList.filter((alert, index)=>{
-            return (moment(alert.createdAt).isAfter(start, "DD-MM-YYYY") && moment(alert.createdAt).isBefore(end, "DD-MM-YYYY"));
+        const auxArray = fixedAlertList.filter((alert, index)=>{
+            return (moment(alert.createdAt).isAfter(props.startDate, "DD-MM-YYYY") && moment(alert.createdAt).isBefore(props.endDate, "DD-MM-YYYY"));
         })
         console.log(auxArray);
-        setlimitedAlertList(auxArray);
+        setAlertList(auxArray);
+        setlimitedAlertList(auxArray.slice(nRows*page, nRows*(page+1)));
     }
 
     useEffect(async ()=>{
