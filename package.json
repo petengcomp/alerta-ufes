@@ -12,6 +12,7 @@
     "@react-pdf/renderer": "^2.0.16",
     "axios": "^0.21.1",
     "chart.js": "^3.4.1",
+    "jspdf": "^2.3.1",
     "leaflet-defaulticon-compatibility": "^0.1.1",
     "leaflet-geosearch": "^3.3.2",
     "moment": "^2.29.1",

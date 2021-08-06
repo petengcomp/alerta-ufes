@@ -1,0 +1,36 @@
+.buttonContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 164px;
+    height: 40px;
+    border-radius: 20px;
+    border: none;
+    outline: none;
+    box-shadow: none;
+    margin: 25px;
+    background: var(--blue);
+    box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.15);
+    color: var(--white);
+    font-family: 'Roboto', sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 21px;
+  }
+  
+  .button:hover {
+    background-color: var(--blue-dark);
+  }
+
+  .button:focus{
+    outline: none;
+    box-shadow: none;
+}

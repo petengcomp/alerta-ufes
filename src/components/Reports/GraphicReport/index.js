@@ -9,34 +9,7 @@ export function GraphicReport(){
     const [alerts, setAlerts] = useState([]);
     const [data, setData] = useState({});
 
-    // async function getCategories() {
-    //     let token;
-    //     let id;
-
-    //     if (typeof window !== "undefined") {
-
-    //         id = localStorage.getItem("ALERTAUFESuserCampusId");
-    //         token = localStorage.getItem("ALERTAUFESuserToken");
-            
-    //     }
-            
-        
-    //     try {
-    //         const response = await api.get(`v1/campi/categories/${id}`, {
-    //             headers:{
-    //                 'Authorization': `Bearer ${token}`
-    //             }});
-    //         let aux = [];
-    //         response.data.categories.map((category)=>{aux.push({name:category.name, count: 0})
-    //         });
-    //         setCategories(aux);
-    //     }
-    //     catch (err) {
-    //         console.log(err);
-    //     }
-    // }
-
-
+   
     async function getAlerts() {
         let token;
         let id;
@@ -120,7 +93,7 @@ export function GraphicReport(){
 
     return(
        <div className={styles.card}>
-           <h3>Gráfico</h3>
+           <h3>Alertas no Campus</h3>
            <Bar 
            data={data} 
            width={400} 

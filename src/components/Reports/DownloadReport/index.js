@@ -3,13 +3,14 @@ import { MdCheckBox, MdCheckBoxOutlineBlank } from "react-icons/md";
 import React, { useState, useEffect } from 'react';
 import api from '../../../services/api'
 import ReactPDF, { Page, Text, View, Document, StyleSheet, PDFViewer, PDFDownloadLink } from '@react-pdf/renderer'
+import {Generatepdf} from '../GeneratePdf'
 
 export function DownloadReport() {
 
     const [marked1, setMarked1] = useState(false);
     const [marked2, setMarked2] = useState(false);
     const [marked3, setMarked3] = useState(false);
-    const [marked4, setMarked4] = useState(false);
+    const [marked4, setMarked4] = useState(false); // Marcado se quiser a data atual
     const [categories, setCategories] = useState([]);
     const [feedbacks, setFeedbacks] = useState([]);
 
@@ -123,7 +124,7 @@ export function DownloadReport() {
                     <label className={styles.firstColumnText}>DATA DE FIM</label>
                     <input className={styles.firstColumnField} type="date" ></input>
                 </div>
-                <div className={styles.secondColumn}>
+                {/* <div className={styles.secondColumn}>
                     <div onClick={() => setMarked1(!marked1)} >
                         {marked1 ? <MdCheckBox className={styles.icon}></MdCheckBox> : <MdCheckBoxOutlineBlank className={styles.icon}></MdCheckBoxOutlineBlank>}
                         <label className={styles.secondColumnText}>Todas as categorias</label>
@@ -140,9 +141,9 @@ export function DownloadReport() {
                         {marked4 ? <MdCheckBox className={styles.icon}></MdCheckBox> : <MdCheckBoxOutlineBlank className={styles.icon}></MdCheckBoxOutlineBlank>}
                         <label className={styles.secondColumnText}>Data atual</label>
                     </div>
-                </div>
+                </div> */}
             </div>
-            <button className={styles.button} onClick={()=>{<PDF/>}}>BAIXAR</button>
+            <Generatepdf title="Relatorio" />
         </div>
     )
 }
