@@ -20,6 +20,17 @@ export function Generatepdf(props){
         doc.text("Relatório", doc.internal.pageSize.width/2, 20, null, null, 'center');
         doc.setFontSize(18);
         doc.text("Gráfico do total de alertas por categoria", doc.internal.pageSize.width/2, 40, null, null, 'center');
+        doc.addPage();
+        doc.setFontSize(14);
+        doc.setFont("Roboto", "none", 500);
+        props.alerts.map((alert, index)=>{
+            if(index !== 0 && index % 2 === 0){
+                doc.addPage();
+            }
+            doc.text(`${JSON.stringify(alert).replaceAll(',', ',\n')}`, 20, 20+(index%2)*100, null, null);
+
+        });
+
         doc.save(`${props.title}.pdf`);
     
     };

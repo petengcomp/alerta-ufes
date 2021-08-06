@@ -6,13 +6,14 @@ import ReactPDF, { Page, Text, View, Document, StyleSheet, PDFViewer, PDFDownloa
 import {Generatepdf} from '../GeneratePdf'
 
 export function DownloadReport() {
-
-    const [marked1, setMarked1] = useState(false);
-    const [marked2, setMarked2] = useState(false);
-    const [marked3, setMarked3] = useState(false);
-    const [marked4, setMarked4] = useState(false); // Marcado se quiser a data atual
+    const [alertList, setAlertList] = useState([]);
+    const [limitedAlertList, setlimitedAlertList] = useState([]);
     const [categories, setCategories] = useState([]);
     const [feedbacks, setFeedbacks] = useState([]);
+    const [startDate, setStartDate] = useState('');
+    const [endDate, setEndDate] = useState('');
+    const [resposta, setResposta] = useState('');
+    const [categoria, setCategoria] = useState('');
 
     const pdfStyles = StyleSheet.create({
         page: {
@@ -95,8 +96,35 @@ export function DownloadReport() {
     useEffect(async () => {
         await getCategories();
         await getFeedbacks();
-
+        await getAlerts();
     }, [])
+
+    async function getAlerts() {
+        let token;
+        let id;
+
+        if (typeof window !== "undefined") {
+
+            id = localStorage.getItem("ALERTAUFESuserCampusId");
+            token = localStorage.getItem("ALERTAUFESuserToken");
+            
+        }
+        try {
+            const response = await api.get(`v1/campi/alerts/${id}`, {
+                headers: {
+                    'Authorization': `Bearer ${token}`
+                }
+            });
+            let aux = response.data.alerts;
+            setAlertList(aux);
+            setlimitedAlertList(aux);
+        }
+        catch (err) {
+            console.log(err);
+        }
+    }
+
+
 
     return (
         <div className={styles.card}>
@@ -120,9 +148,9 @@ export function DownloadReport() {
                         )}
                     </select>
                     <label className={styles.firstColumnText}>DATA DE INICIO</label>
-                    <input className={styles.firstColumnField} type="date" ></input>
+                    <input className={styles.firstColumnField} value={startDate} type="date" ></input>
                     <label className={styles.firstColumnText}>DATA DE FIM</label>
-                    <input className={styles.firstColumnField} type="date" ></input>
+                    <input className={styles.firstColumnField} value={endDate} type="date" ></input>
                 </div>
                 {/* <div className={styles.secondColumn}>
                     <div onClick={() => setMarked1(!marked1)} >
@@ -143,7 +171,7 @@ export function DownloadReport() {
                     </div>
                 </div> */}
             </div>
-            <Generatepdf title="Relatorio" />
+            <Generatepdf title="Relatorio" alerts={limitedAlertList} />
         </div>
     )
 }

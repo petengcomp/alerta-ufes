@@ -16,14 +16,19 @@
 .invisibleBox {
     display: flex;
     flex-direction: row;
+    width: 100%;
+    justify-self: center;
+    padding: 0px 15px;
+    align-items: center;
+    justify-content: center;
 }
 
 .firstColumn{
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    min-width: 120px;
     max-width: 300px;
+    width: 80%;
 }
 
 .secondColumn{
