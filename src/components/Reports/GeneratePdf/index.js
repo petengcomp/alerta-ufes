@@ -35,9 +35,14 @@ export function Generatepdf(props){
     
     };
 
+    const clickFunction= () => {
+        generatePdf();
+
+    }
+
     return(
         <div className={styles.buttonContainer}>
-            <button className={styles.button} onClick={generatePdf}>Gerar PDF</button>
+            <button className={styles.button} onClick={clickFunction}>Gerar PDF</button>
         </div>
     )
 }
