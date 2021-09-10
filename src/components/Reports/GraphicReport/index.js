@@ -38,9 +38,6 @@ export function GraphicReport(){
                     })
                 }
             });
-            console.log("AUX");
-            console.log(aux);
-            console.log("DEPOIS AUX");
             setCategories(aux);
             setAlerts(response.data.alerts);
         }

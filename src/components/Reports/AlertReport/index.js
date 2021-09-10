@@ -27,7 +27,7 @@ export function AlertReport(props) {
         if(alerta.status === 'finalizado')
             status = "styles.final"
         
-        console.log(status)
+
         Swal.fire({  
             html:
                 `<div>`+
@@ -99,7 +99,7 @@ export function AlertReport(props) {
             //     }
             //     return av-bv;
             // });
-            console.log(aux);
+
             setFixedAlertList(aux);
             setAlertList(aux);
             setlimitedAlertList(aux.slice(nRows*page, nRows*(page+1)));
@@ -133,8 +133,6 @@ export function AlertReport(props) {
 
     function filterBydate(){
         if(props.startDate === '' && props.endDate === ''){
-            console.log("AEO0");
-            console.log(fixedAlertList);
             setAlertList(fixedAlertList);
             setlimitedAlertList(fixedAlertList.slice(nRows*page, nRows*(page+1)));
             return;
@@ -142,7 +140,6 @@ export function AlertReport(props) {
         const auxArray = fixedAlertList.filter((alert, index)=>{
             return (moment(alert.createdAt).isAfter(props.startDate, "DD-MM-YYYY") && moment(alert.createdAt).isBefore(props.endDate, "DD-MM-YYYY"));
         })
-        console.log(auxArray);
         setAlertList(auxArray);
         setlimitedAlertList(auxArray.slice(nRows*page, nRows*(page+1)));
     }

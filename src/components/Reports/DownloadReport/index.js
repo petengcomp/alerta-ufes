@@ -118,8 +118,6 @@ export function DownloadReport() {
                     'Authorization': `Bearer ${token}`
                 }
             });
-            console.log(string);
-            console.log(response.data);
             setToDownload(response.data);
         }
         catch (err) {
