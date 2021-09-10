@@ -1,5 +1,5 @@
-import { useEffect, useContext, useState } from 'react';
-import { MapContainer, TileLayer,Marker,Popup } from 'react-leaflet'
+import { useEffect, useContext } from 'react';
+import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet'
 
 import styles from '../../styles/components/Map/Map.module.css'
 import Swal from 'sweetalert2';
@@ -21,8 +21,7 @@ const Map = () => {
         setAlerts,
         handleClickAlert,
         getCategorias,
-        atualizaQtdAlerts,  
-        qtdAlerts   
+        atualizaQtdAlerts,    
     } = useContext(AlertInfoContext)
 
     async function loadAlerts(){
@@ -43,8 +42,6 @@ const Map = () => {
         catch (err) {
             console.log(err.response.data);
         }
-
-        
     }
 
     function newAlert(){

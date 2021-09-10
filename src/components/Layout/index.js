@@ -8,7 +8,7 @@ const Layout = ({children}) => {
             <TabNavigator />
             <TopbarProvider>
                 <Topbar /> 
-            {children}
+                {children}
             </TopbarProvider>
         </div>
     )

@@ -16,15 +16,12 @@ export function Categories(){
         setIdCampus(campusId);
         let tokenValue = localStorage.getItem('ALERTAUFESuserToken');
         setToken(tokenValue);
-
-
         try {
             const response = await api.get(`v1/campi/categories/${campusId}`, {
                 headers: {
                     'Authorization': `Bearer ${tokenValue}`
                 }
             });
-            // console.log(response.data)
             setCategorias(response.data.categories)
         }
         catch (err) {

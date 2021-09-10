@@ -1,4 +1,4 @@
-import { useEffect, useContext } from 'react';
+import { useContext } from 'react';
 import styles from '../../../styles/components/Campi/CampiRegistered.module.css';
 
 import { ListCampi } from '../ListCampi';

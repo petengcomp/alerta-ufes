@@ -1,7 +1,6 @@
 import { createContext, useState } from "react";
 
 import Swal from 'sweetalert2';
-import format from 'telefone/format';
 
 import api from "../services/api";
 
@@ -58,13 +57,19 @@ export function AlertInfoProvider({children}) {
 
     async function handleClickAlert(alerta){
         let formValues, formValues2, formValues3;
+        let number;
+        if(alerta.requester.cellphone === 10)
+            number = `(${alerta.requester.cellphone.substring(0, 2)}) ${alerta.requester.cellphone.substring(2, 6)}-${alerta.requester.cellphone.substring(6, 11)}`;
+        else
+            number = `(${alerta.requester.cellphone.substring(0, 2)}) ${alerta.requester.cellphone.substring(2, 7)}-${alerta.requester.cellphone.substring(7, 12)}`;
+        
         if(alerta.status == "não respondido"){
             await Swal.fire({  
                 html:
                     `<div>`+
                         `<strong>${(alerta.status).toUpperCase()}</strong>`+      
                         `<h2 id="swal-input1" type="text" placeholder="">${alerta.requester.login}</h2>` +
-                        `<h2 id="swal-input1" type="text" placeholder="">${format(alerta.requester.cellphone)}</h2>` +
+                        `<h2 id="swal-input1" type="text" placeholder="">${number}</h2>` +
                         '<label>RESPOSTA RÁPIDA</label>'+
                         '<select id="select">'+
                             `${(feedbacks).map((feedback, index) => {return(
@@ -96,7 +101,7 @@ export function AlertInfoProvider({children}) {
                             campus_id: id,
                             feedback_id: formValues,
                             requester_id: alerta.requester_id,
-                            responser_id: 29,
+                            responser_id: 29, //! MIRELLY TIROU O OBRIGATORIO? NAO SEI, DEIXA ASISM
                             latitude: alerta.latitude,
                             longitude: alerta.longitude,
                             precise_location: 1,
@@ -107,6 +112,14 @@ export function AlertInfoProvider({children}) {
                             }
                         })
                          
+                        const responseFeedback = await api.post(`/v1/feedbacks/send/${formValues}`,{
+                            requester_id: alerta.requester_id,
+                        },{
+                            headers: {
+                                'Authorization': `Bearer ${tokenValue}`
+                            }
+                        })
+
                     }catch(err){
                         console.log(err.message)
                     }
@@ -120,7 +133,7 @@ export function AlertInfoProvider({children}) {
                     `<div>`+
                         `<strong>${alerta.status}</strong>`+      
                         `<h2 id="swal-input1" type="text" placeholder="">${alerta.requester.login}</h2>` +
-                        `<h2 id="swal-input1" type="text" placeholder="">${format(alerta.requester.cellphone)}</h2>` +
+                        `<h2 id="swal-input1" type="text" placeholder="">${number}</h2>` +
                         '<span>' +
                         '<label>RESPOSTA RÁPIDA</label>'+
                         '<p>'+  
@@ -187,7 +200,7 @@ export function AlertInfoProvider({children}) {
                     `<div>`+
                         `<strong>${alerta.status}</strong>`+      
                         `<h2 id="swal-input1" type="text" placeholder="">${alerta.requester.login}</h2>` +
-                        `<h2 id="swal-input1" type="text" placeholder="">${format(alerta.requester.cellphone)}</h2>` +
+                        `<h2 id="swal-input1" type="text" placeholder="">${number}</h2>` +
                         '<span>' +
                             '<label>RESPOSTA RÁPIDA</label>'+
                             '<p>'+  

@@ -24,7 +24,6 @@ export function QuickAnswers(){
                     'Authorization': `Bearer ${tokenValue}`
                 }
             });
-            // console.log(response.data)
             setAnswers(response.data.feedbacks)
         }
         catch (err) {

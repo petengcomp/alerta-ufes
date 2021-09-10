@@ -24,7 +24,6 @@ export function ListCampi(){
     } = useContext(CampiContext);
 
     const [loading, setLoading] = useState(true);
-    const [qtdAtendentes, setQtdAtendentes] = useState(0);
 
     async function registerCampus(){
         let formValues = [];

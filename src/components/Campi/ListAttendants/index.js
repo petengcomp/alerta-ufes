@@ -18,7 +18,6 @@ export function ListAttendants(){
 
     const [login, setLogin] = useState('');
     const [loading, setLoading] = useState(true)
-
     const [attendants, setAttendants] = useState([])
 
     async function loadAttendants(){
